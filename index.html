@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tuts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&family=Open+Sans&display=swap');
+        body{
+            margin:0;
+            padding:0;
+            font-family: 'Baloo Bhaijaan 2', cursive;
+            font-family: 'Open Sans', sans-serif;
+            background: url('background.png');
+        }
+        .container{
+            display: flex;
+            background-color: antiquewhite;
+            border-radius: 15px;
+            width: 50%;
+            height: 70px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top: 100px;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .items{
+          border: 4px solid black;
+          border-radius: 10px;
+          height: 50%;
+          width: 20%;
+          text-align: center;
+          padding-bottom: 8px;
+          font-size: 2rem;
+        }
+        h1,p{
+            text-align: center;
+        }
+        h1{
+            font-size: 3rem;
+        }
+        p{
+        font-size: 1.5rem;
+        color:rgb(4, 0, 255);
+        font-weight: bold;
+        }
+        @media only screen and (max-width: 500px){
+            .container{
+                width: 70%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Clock</h1>
+    
+    <div class="container">
+        <div class="items" id="item-1"></div><p style="font-size:2rem">:</p>
+        <div class="items" id="item-2"></div><p style="font-size:2rem">:</p>
+        <div class="items" id="item-3"></div>
+    </div>
+    <p>Made by Salil sharma</p>
+    <script>
+        function SetTimeAndDate(hour,mins,seconds){
+        let date=new Date();
+        let hr=date.getHours();
+        let min=date.getMinutes();
+        let sec=date.getSeconds();
+        hour.innerText=hr;
+        mins.innerText=min;
+        seconds.innerText=sec;
+        }
+        setInterval(()=>{
+            let hour=document.getElementById("item-1");
+            let mins=document.getElementById("item-2");
+            let seconds=document.getElementById("item-3");
+            SetTimeAndDate(hour,mins,seconds);  
+        },1000);
+    </script>
+</body>
+</html>
